@@ -1,0 +1,209 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Teko", sans-serif;
+}
+
+/* root settings */
+:root {
+  /* common settings for all color scheme */
+  --transition: all 0.4s ease-in-out;
+
+  /* light color scheme settings */
+  --bg-color-light: #eeeded;
+  --font-color-light: #595a9e;
+  --other-bg-light: #595a9e;
+
+  /* dark color scheme settings */
+  --bg-color-dark: #16171e;
+  --font-color-dark: #eeeded;
+  --other-bg-dark: #353a4a;
+}
+
+/* light color scheme styling */
+[color-scheme="light"] {
+  --bg-color: var(--bg-color-light);
+  --font-color: var(--font-color-light);
+  --other-bg: var(--other-bg-light);
+}
+
+/* dark color scheme styling */
+[color-scheme="dark"] {
+  --bg-color: var(--bg-color-dark);
+  --font-color: var(--font-color-dark);
+  --other-bg: var(--other-bg-dark);
+}
+
+/* theme-button styling*/
+.theme-icon:hover {
+  cursor: pointer;
+  scale: 1.1;
+  transition: var(--transition);
+}
+
+/* main body styling */
+body {
+  background-color: var(--bg-color);
+  transition: var(--transition);
+  color: var(--font-color);
+  width: 100vw;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Theme Button Style */
+.theme-btn-container {
+  padding: 20px;
+  text-align: right;
+  font-size: 20px;
+}
+
+/* nav styling */
+nav {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  justify-content: space-between;
+  background-color: bisque;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: var(--other-bg);
+  transition: var(--transition);
+  color: #eeeded;
+}
+
+/* nav left  */
+.home-link {
+  text-decoration: none;
+  color: #eeeded;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+.logo-title {
+  font-size: 30px;
+}
+.logo {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.logo-img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+/* nav right */
+.nav-links-container {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+.nav-link {
+  text-decoration: none;
+  color: #eeeded;
+}
+.nav-link:hover {
+  scale: 1.05;
+  transition: var(--transition);
+}
+.nav-link-icon {
+  margin-right: 5px;
+}
+.nav-link-container {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+/* main section */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://wallpapers.com/images/hd/comics-avengers-k8qgfdf6ld2gv0oj.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 10px;
+  height: 100vh;
+  border-radius: 25px;
+  padding: 20px;
+}
+#favourite-heroes {
+  display: flex;
+  gap: 100px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-height: 500px;
+  overflow-y: scroll;
+  font-size: xx-large;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.favourite-hero-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--other-bg);
+  color: #eeeded;
+  width: 200px;
+  height: auto;
+  padding: 10px;
+  border-radius: 20px;
+  opacity: 0.9;
+  transition: var(--transition);
+  font-size: 15px;
+}
+
+.hero-img-container {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.fav-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.hero-info-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  gap: 5px;
+  align-items: center;
+}
+.fav-hero-name {
+  font-size: 25px;
+}
+.hero-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 80%;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 10px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: #eeeded;
+}
+.hero-btn:hover {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  transition: var(--transition);
+}

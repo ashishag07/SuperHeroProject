@@ -1,0 +1,257 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Teko", sans-serif;
+}
+
+/* root settings */
+:root {
+  /* common settings for all color scheme */
+  --transition: all 0.4s ease-in-out;
+
+  /* light color scheme settings */
+  --bg-color-light: #eeeded;
+  --font-color-light: #595a9e;
+  --other-bg-light: #595a9e;
+
+  /* dark color scheme settings */
+  --bg-color-dark: #16171e;
+  --font-color-dark: #eeeded;
+  --other-bg-dark: #353a4a;
+}
+
+/* light color scheme styling */
+[color-scheme="light"] {
+  --bg-color: var(--bg-color-light);
+  --font-color: var(--font-color-light);
+  --other-bg: var(--other-bg-light);
+}
+
+/* dark color scheme styling */
+[color-scheme="dark"] {
+  --bg-color: var(--bg-color-dark);
+  --font-color: var(--font-color-dark);
+  --other-bg: var(--other-bg-dark);
+}
+
+/* theme-button styling*/
+.theme-icon:hover {
+  cursor: pointer;
+  scale: 1.1;
+  transition: var(--transition);
+}
+
+/* main body styling */
+body {
+  background-color: var(--bg-color);
+  transition: var(--transition);
+  color: var(--font-color);
+  width: 100vw;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Theme Button Style */
+.theme-btn-container {
+  padding: 20px;
+  text-align: right;
+  font-size: 20px;
+}
+
+/* nav styling */
+nav {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  justify-content: space-between;
+  background-color: bisque;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: var(--other-bg);
+  transition: var(--transition);
+  color: #eeeded;
+}
+
+/* nav left  */
+.home-link {
+  text-decoration: none;
+  color: #eeeded;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+.logo-title {
+  font-size: 30px;
+}
+.logo {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.logo-img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+/* nav right */
+.nav-links-container {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+.nav-link {
+  text-decoration: none;
+  color: #eeeded;
+}
+.nav-link:hover {
+  scale: 1.05;
+  transition: var(--transition);
+}
+.nav-link-icon {
+  margin-right: 5px;
+}
+.nav-link-container {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+/* main section */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("https://wallpapers.com/images/hd/comics-avengers-k8qgfdf6ld2gv0oj.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 10px;
+  height: 100vh;
+  border-radius: 25px;
+  padding: 20px;
+}
+
+/* main searchbar section */
+#main-searchbar {
+  background-color: var(--other-bg);
+  transition: var(--transition);
+  color: #eeeded;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 100px;
+  height: 40px;
+  margin-top: 150px;
+  width: 100%;
+  font-size: 20px;
+}
+.searchbar-icon {
+  margin-right: 10px;
+}
+.main-search-input {
+  padding: 5px 10px;
+  font-size: 20px;
+  border-radius: 50px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border: none;
+  width: 100%;
+}
+.main-search-input:focus {
+  outline: none;
+}
+
+/* main search results */
+#main-search-results {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--other-bg);
+  transition: var(--transition);
+  color: #eeeded;
+  width: 100%;
+  border-radius: 20px;
+  margin: 20px;
+  overflow-y: scroll;
+  opacity: 0.9;
+}
+
+.search-hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+.hero-img-container {
+  width: 100px;
+  height: 100px;
+  background-color: #eeeded;
+  padding: 5px;
+  border-radius: 5px;
+}
+.hero-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: fill;
+}
+.search-hero-title {
+  width: 70%;
+  margin: 0 10px;
+  font-size: 18px;
+}
+.fav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: transparent;
+  color: #eeeded;
+  min-width: 95px;
+  font-size: 12px;
+}
+
+/* media queries */
+
+@media screen and (min-width: 500px) {
+  #main-searchbar {
+    width: 80%;
+  }
+  #main-search-results {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  #main-searchbar {
+    width: 70%;
+  }
+  #main-search-results {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #main-searchbar {
+    width: 60%;
+  }
+  #main-search-results {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  #main-searchbar {
+    width: 50%;
+  }
+  #main-search-results {
+    width: 50%;
+  }
+}

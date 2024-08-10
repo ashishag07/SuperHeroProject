@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" id="root">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font Awesom CDN Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Google Fonts link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylsheet Link -->
+    <link rel="stylesheet" href="styleMain.css" />
+
+    <title>Super Hero Hunter</title>
+  </head>
+
+  <body>
+    <!-- Theme button -->
+    <div class="theme-btn-container">
+      <i class="fa-solid fa-moon theme-icon"></i>
+    </div>
+
+    <!-- Nav Section -->
+    <nav>
+      <!-- Nav Left Logo & Title -->
+      <a href="main.html" class="home-link">
+        <div class="logo-container">
+          <div class="logo">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJX9mG90pzA8SlMK9UjEwUVHgEMzp9C3z1zw&s"
+              alt="nav-logo"
+              class="logo-img"
+            />
+          </div>
+
+          <span class="logo-title">Super Hero Hunter</span>
+        </div>
+      </a>
+
+      <!-- Nav Right Nav Links -->
+      <div class="nav-links-container">
+        <a href="favourite.html" class="nav-link">
+          <div class="nav-link-container">
+            <i class="fa-solid fa-heart nav-link-icon"></i>
+            Favourite
+          </div>
+        </a>
+      </div>
+    </nav>
+
+    <!-- main section -->
+    <!-- main section contains search bar and search results -->
+    <main>
+      <section id="main-searchbar">
+        <i class="fa-solid fa-magnifying-glass searchbar-icon"></i>
+        <input
+          type="text"
+          class="main-search-input"
+          placeholder="Search For Super Hero"
+        />
+      </section>
+
+      <section id="main-search-results">
+        <!-- <div class="search-hero-container">
+          <div class="hero-img-container">
+            <img
+              src="https://static.tnn.in/thumb/111411515/111411515.jpg?height=746&width=420&resizemode=76&imgsize=1400005"
+              alt=""
+              class="hero-img"
+            />
+          </div>
+          <span class="search-hero-title">Iron Man</span>
+          <button class="fav-btn add-fav">
+            <i class="fa-solid fa-heart nav-link-icon"></i>
+            <span>Add to Favourite</span>
+          </button>
+        </div>
+
+        <div class="search-hero-container">
+          <div class="hero-img-container">
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BMTcyNDAwNDc2OF5BMl5BanBnXkFtZTcwOTc4MjIwNQ@@._V1_.jpg"
+              alt=""
+              class="hero-img"
+            />
+          </div>
+          <span class="search-hero-title"
+            >Iron Man sword of honor, leader of avangers. tony stark</span
+          >
+          <button class="fav-btn add-fav">
+            <i class="fa-solid fa-heart nav-link-icon"></i>
+            <span>Add to Favourite</span>
+          </button>
+        </div>
+
+        <div class="search-hero-container">
+          <div class="hero-img-container">
+            <img
+              src="https://steamuserimages-a.akamaihd.net/ugc/640994505188424163/C73CBE34FFA77928BF44E60C881DDE0162C988C7/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"
+              alt=""
+              class="hero-img"
+            />
+          </div>
+          <span class="search-hero-title">Iron Man</span>
+          <button class="fav-btn add-fav">
+            <i class="fa-solid fa-heart nav-link-icon"></i>
+            <span>Add to Favourite</span>
+          </button>
+        </div>
+
+        <div class="search-hero-container">
+          <div class="hero-img-container">
+            <img
+              src="https://images.tokopedia.net/img/cache/500-square/hDjmkQ/2022/10/15/f7be6fae-2f11-4d49-9029-99901da918bf.jpg"
+              alt=""
+              class="hero-img"
+            />
+          </div>
+          <span class="search-hero-title"
+            >Iron Man sword of honor, leader of avangers. tony stark</span
+          >
+          <button class="fav-btn add-fav">
+            <i class="fa-solid fa-heart nav-link-icon"></i>
+            <span>Add to Favourite</span>
+          </button>
+        </div>
+
+        <div class="search-hero-container">
+          <div class="hero-img-container">
+            <img
+              src="https://cdn.britannica.com/30/182830-050-96F2ED76/Chris-Evans-title-character-Joe-Johnston-Captain.jpg"
+              alt=""
+              class="hero-img"
+            />
+          </div>
+          <span class="search-hero-title">Iron Man</span>
+          <button class="fav-btn add-fav">
+            <i class="fa-solid fa-heart nav-link-icon"></i>
+            <span>Add to Favourite</span>
+          </button>
+        </div>
+
+        <div class="search-hero-container">
+          <div class="hero-img-container">
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BMTcyNDAwNDc2OF5BMl5BanBnXkFtZTcwOTc4MjIwNQ@@._V1_.jpg"
+              alt=""
+              class="hero-img"
+            />
+          </div>
+          <span class="search-hero-title"
+            >Iron Man sword of honor, leader of avangers. tony stark</span
+          >
+          <button class="fav-btn add-fav">
+            <i class="fa-solid fa-heart nav-link-icon"></i>
+            <span>Add to Favourite</span>
+          </button>
+        </div> -->
+      </section>
+    </main>
+
+    <script src="scriptMain.js"></script>
+  </body>
+</html>
