@@ -1,7 +1,7 @@
 /***************************
-  Api credentials:
+  API credentials:
   ----------------  
-  user defined string   : const ts = "AshishString"
+  user-defined string   : const ts = "AshishString"
   public key            : 4375433bf19f245517cdb61d99824999
   private key           : 255d32fd57754b1d22db60000a4777ea29ee6096
   md5                   : (ts + privateKey + publicKey)
@@ -16,30 +16,30 @@ const ts = "AshishString"; // user defined string
 const mainInputSearch = document.querySelector(".main-search-input");
 const searchResults = document.getElementById("main-search-results");
 
-// add event listner to the input search for hero
+// add event listener to the input search for hero
 mainInputSearch.addEventListener("input", (e) => {
   searchHero(e.target.value);
 });
 
 /*---------------------------------------------------------------------
   searchHero function is used for:
-  -to call the api based on the input
-  -also consists displaySearchHero function to display the api results
+  -to call the API based on the input
+  -also consists displaySearchHero function to display the API results
 -----------------------------------------------------------------------*/
 async function searchHero(event) {
   if (event.length === 0) {
-    // when there is no data to display set the searchResults
+    //When there is no data to display set the searchResults
     searchResults.style.display = "none";
     return;
   }
 
-  // when there is data to display set the searchResults display to flex
+  //When there is data to display set the searchResults display to flex
   searchResults.style.display = "flex";
 
-  // api url based on input
+  // API url based on input
   const url = `https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=${event}&apikey=4375433bf19f245517cdb61d99824999&hash=925292159721194f37e48f5dba33a1bc&ts=AshishString`;
 
-  // call the api using fetch
+  // call the API using fetch
   const response = await fetch(url);
   const jsonData = await response.json();
   const result = jsonData.data.results;
@@ -50,12 +50,12 @@ async function searchHero(event) {
 }
 
 /*-------------------------------------------------------------------------------
-  displaySearchHero function is used to display all heroes availaible in the result
+  displaySearchHero function is used to display all heroes available in the result
 ---------------------------------------------------------------------------------*/
 function displaySearchHero(result) {
   searchResults.innerHTML = "";
   result.forEach((hero) => {
-    //insert all the heroes appear during search results
+    //insert all the heroes that appear during search results
     searchResults.insertAdjacentHTML("beforeend", insertHero(hero));
   });
 
@@ -71,24 +71,24 @@ function displaySearchHero(result) {
         heroId = e.target.id;
       }
 
-      // get the favHeroesList array from the local storage
+      //Get the favHeroesList array from the local storage
       let favHeroesList = JSON.parse(localStorage.getItem("favHeroes"));
 
-      // find the complete hero object associated with the heroId
+      //Find the complete hero object associated with the heroId
       const heroObj = result.find(
         (hero) => hero.id === Number(heroId.substr(2))
       );
 
-      // push the hero object into the favHeroesList array
+      //Push the hero object into the favHeroesList array
       favHeroesList.push(heroObj);
       // update the favHeroes variable in local storage
       localStorage.setItem("favHeroes", JSON.stringify(favHeroesList));
 
       // get the current clicked button
       const currBtn = document.getElementById(`${heroId}`);
-      // get the container in which current clicked button exists
+      // get the container where the currently clicked button exists
       const currContainer = currBtn.parentElement;
-      // remove the current clicked button
+      //Remove the current clicked button
       currBtn.remove();
 
       const btnToAppend = `<button class="fav-btn remove-fav" id=${heroId}>
@@ -96,19 +96,19 @@ function displaySearchHero(result) {
             <span>Remove Favourite</span>
           </button>
             `;
-      // insert the newly created button to the container
+      //Insert the newly created button into the container
       currContainer.insertAdjacentHTML("beforeend", btnToAppend);
 
-      // after append reload the page to show the new changes
+      //After appending reload the page to show the new changes
       displaySearchHero(result);
     });
   });
 
-  // add event listner to the remove fovourite btn
+  // add event listener to the remove favorite btn
   const removeFavBtn = document.querySelectorAll(".remove-fav");
   removeFavBtn.forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      // get the id of the clicked button
+      //Get the id of the clicked button
       let heroId;
       if (e.target.parentElement.id) {
         heroId = e.target.parentElement.id;
@@ -116,9 +116,9 @@ function displaySearchHero(result) {
         heroId = e.target.id;
       }
 
-      // get the favHeroesList from the localStorage
+      //Get the favHeroesList from the localStorage
       let favHeroesList = JSON.parse(localStorage.getItem("favHeroes"));
-      // in order to remove the hero from favHeroes, filter out the hero from the favHeroesList
+      //to remove the hero from favHeroes, filter out the hero from the favHeroesList
       const heroObj = favHeroesList.filter(
         (hero) => hero.id != Number(heroId.substr(2))
       );
@@ -127,9 +127,9 @@ function displaySearchHero(result) {
 
       // get the current clicked button
       const currBtn = document.getElementById(`${heroId}`);
-      // get the container in which current clicked button exists
+      // get the container where the currently clicked button exists
       const currContainer = currBtn.parentElement;
-      // remove the current clicked button
+      //Remove the current clicked button
       currBtn.remove();
 
       const btnToAppend = `<button class="fav-btn add-fav" id=${heroId}>
@@ -138,10 +138,10 @@ function displaySearchHero(result) {
           </button>
             `;
 
-      // insert the newly created button to the container
+      //Insert the newly created button into the container
       currContainer.insertAdjacentHTML("beforeend", btnToAppend);
 
-      // after append reload the page to show the new changes
+      //After appending reload the page to show the new changes
       displaySearchHero(result);
     });
   });
@@ -151,7 +151,7 @@ function displaySearchHero(result) {
 function to insert the hero into the search results
 ------------------------------------------------------------------------------*/
 function insertHero(hero) {
-  // in order to check if the hero is already exists in favourite list, get the favHeroesList from the local storage
+  //to check if the hero already exists in the favorite list, get the favHeroesList from the local storage
   let favHeroesList = localStorage.getItem("favHeroes");
 
   if (favHeroesList == null) {
@@ -160,7 +160,7 @@ function insertHero(hero) {
     // update the favHeroes with the empty favHeroesList
     localStorage.setItem("favHeroes", JSON.stringify(favHeroesList));
   } else {
-    // get the favHeroesList from the local storage
+    //Get the favHeroesList from the local storage
     favHeroesList = JSON.parse(localStorage.getItem("favHeroes"));
   }
 
@@ -204,7 +204,7 @@ const root = document.getElementById("root");
 const [themeIcon] = document.getElementsByClassName("theme-icon");
 
 /*----------------------------------------------------------------------
-function to set the color scheme light/dark
+function to set the color scheme to light/dark
 -----------------------------------------------------------------------*/
 function setColorScheme(mode) {
   if (mode === "dark") {
@@ -218,7 +218,7 @@ function setColorScheme(mode) {
   }
 }
 
-// set the color scheme based on local storage value
+//Set the color scheme based on local storage value
 if (localStorage.getItem("mode") === "dark") {
   setColorScheme("dark");
 } else {
